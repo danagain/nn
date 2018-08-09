@@ -1,9 +1,18 @@
-FROM python:3
+# Grab the tensorflow image
+FROM tensorflow/tensorflow:latest-py3
 
-WORKDIR /var/app
+#navigate to the working dir
+WORKDIR /app
 
-COPY . .
+#clone the python project
+CMD ["git", "clone https://github.com/danagain/nn.git"]
 
-RUN pip install -r requirements.txt
+CMD ["echo", "pwd"]
 
-CMD ["python","-u","r.py"]
+CMD ["cd", "/app/nn"]
+
+CMD ["pip", "install -r requirements.txt"]
+
+CMD ["python", "r.py"]
+
+
