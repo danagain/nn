@@ -1,3 +1,5 @@
 requests
 itertools
 pandas
+SimpleHTTPServer
+SocketServer
